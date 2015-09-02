@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	
+<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="l'abel armoires" />
+		<meta name="keywords" content="armoires, design, meubles, cuisine, bain" />
+		<link rel="shortcut icon" href="images/favicon.png" type="image/png" />
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/styles/prettyPhoto.css" type="text/css" media="screen" />
+		<link id="gFontName" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cuprum:regular,italic,bold,bolditalic" type="text/css" />
+		<link href='http://fonts.googleapis.com/css?family=Parisienne' rel='stylesheet' type='text/css'>
+		<!--[if lt IE 9]>
+			<link rel="stylesheet" href="css/styles/ie.css" type="text/css" />
+		<![endif]-->
+		<title>L'Abel Armoires - Votre satisfaction…Notre fierté !</title>
+	</head>
+	<body class="standard">
+		<script type="text/javascript"> if (self != top) document.body.className = parent.document.getElementById('iframe').getAttribute('class'); </script>
+		<script type="text/javascript"> if (window.jQuery == undefined) document.write( unescape('%3Cscript src="js/jquery-1.6.4.min.js" type="text/javascript"%3E%3C/script%3E') ); </script>
+		<script src="js/jquery.prettyPhoto.js" type="text/javascript"></script>
+		<script src="js/script.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				if (jQuery.browser.msie && jQuery.browser.version < 9){
+					var $windowWidth = jQuery(window).width()+17;
+					var $windowHeight = jQuery(window).height()+17;
+				} else {
+					var $windowWidth = window.innerWidth;
+					var $windowHeight = window.innerHeight;
+				}
+				
+				jQuery('body').append('<div id="preloaderMotion" />');
+				jQuery('a.header_arrow').addClass('hidden');
+				
+				var $slider = '#sliderMotion';
+				var $preloader = '#preloaderMotion';
+				var $images = jQuery($slider+' li img');
+				var $max = $images.length;
+				
+				$images.each(function(){
+					var img = new Image();
+					
+					img.src = jQuery(this).attr('src');
+					
+					var intervalId = setInterval(function(){
+						if (img.complete){
+							clearInterval(intervalId);
+							
+							$max--;
+							
+							jQuery($preloader).append('<img id="nMotion'+$max+'" src="'+img.src+'" width="60" height="35" alt="" />');
+							jQuery($preloader).find('img#nMotion'+$max).animate({opacity:1}, 500);
+							
+							if ($max == 0){
+								LoadImageStart(jQuery($slider));
+								jQuery($preloader).fadeOut(500, function(){
+									jQuery(this).css({display:'none'});
+									showHideContent();
+								});
+							}
+						}
+					}, 50);
+				});
+				
+				function LoadImageStart(slider){
+					slider.cmsmsMotionSlider({
+						sliderWidth:$windowWidth,
+						sliderHeight:$windowHeight,
+						pauseOnHover:false,
+						showPause:false
+					});
+					
+					jQuery('a[rel="prettyPhoto[bgSlider]"]').prettyPhoto({animationSpeed:'normal', deeplinking:false, social_tools:false});
+				}
+				
+				jQuery(window).resize(function(){
+					if (jQuery.browser.msie && jQuery.browser.version < 9){
+						var $windowWidth = jQuery(window).width()+17;
+						var $windowHeight = jQuery(window).height();
+					} else {
+						var $windowWidth = window.innerWidth;
+						var $windowHeight = window.innerHeight;
+					}
+					
+					jQuery('.cmsmsMotionSliderContainer, .cmsmsMotionSlides, .cmsmsMotionSlides canvas, .cmsmsMotionSlides img, .cmsmsMotionSlides iframe').css({width:$windowWidth+'px', height:$windowHeight+'px'});
+					jQuery('.cmsmsMotionControl').css({height:$windowHeight+'px'});
+					jQuery('.cmsmsMotionNavigation').css({height:parseInt($windowHeight - 195)+'px'});
+				});
+			});
+		</script>
+
+<!-- _________________________ Start Slider __________________________ -->
+		<ul id="sliderMotion">
+			<li data-thumb="images/slider/thumbs/img1.jpg" data-start="bottom right" data-finish="top left" data-zoom="out" data-animation="10">
+				<img src="images/slider/img1.jpg" alt="Banner Image 1" />
+			</li>
+			<li data-thumb="images/slider/thumbs/img2.jpg" data-start="top left" data-finish="bottom right" data-zoom="out">
+				<img src="images/slider/img2.jpg" alt="Banner Image 3" />
+				<div class="cmsmsSlideCaption" data-top="50">
+					<h2>Bienvenue!</h2>
+					<p><big>Armoires de cuisine, de salle de bain et meubles sur mesure.</big></p>
+					<span class="selecterBtns"><a href="services.html">En savoir plus</a></span>
+				</div>
+			</li>
+			<li data-thumb="images/slider/thumbs/img3.jpg" data-start="bottom left" data-finish="top right" data-zoom="in" data-animation="15">
+				<img src="images/slider/img3.jpg" alt="Banner Image 2" />
+			</li>
+			<li data-thumb="images/slider/thumbs/img4.jpg" data-start="center left" data-finish="bottom right" data-zoom="out" data-animation="15">
+				<img src="images/slider/img4.jpg" alt="Banner Image 4" />
+			</li>
+			<li data-thumb="images/slider/thumbs/img5.jpg" data-start="center left" data-finish="top right" data-zoom="in" data-animation="15">
+				<img src="images/slider/img5.jpg" alt="Banner Image 5" />
+			</li>
+		</ul>
+<!-- _________________________ Finish Slider __________________________ -->
+
+
+<!-- _________________________ Start Page ___________________________ -->
+		<div id="page" class="hideContent">
+
+<!-- _________________________ Start Header _________________________ -->
+<div class="header_wrap">
+				<div id="header">
+					<div class="header_inner">
+						<a class="logo" title="L'Abel Armoires" href="index.html">
+							<img alt="L'Abel Armoires logo" src="images/logo.png" />
+						</a>
+<!-- _________________________ Start Navigation _____________________ -->
+						<div class="navigation_wrap">
+							<ul id="navigation">
+								<li><a href="index.html">Accueil<span>L'Abel Armoire</span></a></li>
+								<li><a href="#">À Propos<span>Qui sommes nous?</span></a>
+									<ul>
+										<li><a href="a_propos.html">Notre Entreprise</a></li>
+										<li><a href="services.html">Nos Services</a></li>
+										
+									</ul>
+								</li>
+								<li><a href="gallerie.html">Gallerie<span>Gallerie Photo</span></a></li>
+									<li><a href="temoignages.html">Témoignages<span>Nos Clients Témoignent</span></a></li>
+								<li><a href="contacts.html">Contacts<span>Contactez-nous</span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="header_arrow_wrap">
+						<a href="#" class="header_arrow"><span>&nbsp;</span></a>
+					</div>
+<!-- _________________________ Finish Navigation ____________________ -->
+
+				</div>
+			</div>
+<!-- _________________________ Finish Header ________________________ -->
+
+		</div>
+<!-- _________________________ Finish Page __________________________ -->
+
+	</body>
+
+</html>

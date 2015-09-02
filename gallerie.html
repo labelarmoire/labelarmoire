@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	
+<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="l'abel armoires" />
+		<meta name="keywords" content="armoires, design, meubles, cuisine, bain" />
+		<link rel="shortcut icon" href="images/favicon.png" type="image/png" />
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/styles/prettyPhoto.css" type="text/css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="js/fancybox/jquery.fancybox-1.3.4.css" />
+		<link id="gFontName" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cuprum:regular,italic,bold,bolditalic" type="text/css" />
+		<link href="http://fonts.googleapis.com/css?family=Parisienne" rel="stylesheet" type="text/css">
+		<!--[if lt IE 9]>
+			<link rel="stylesheet" href="css/styles/ie.css" type="text/css" />
+		<![endif]-->
+		<title>L'Abel Armoires - Votre satisfaction…Notre fierté !</title>
+	</head>
+	<body class="standard">
+		<script type="text/javascript"> if (self != top) document.body.className = parent.document.getElementById('iframe').getAttribute('class'); </script>
+		<script type="text/javascript"> if (window.jQuery == undefined) document.write( unescape('%3Cscript src="js/jquery-1.6.4.min.js" type="text/javascript"%3E%3C/script%3E') ); </script>
+		<script type="text/javascript" src="js/jquery.prettyPhoto.js" ></script>
+		<script type="text/javascript" src="js/script.js" ></script>
+		<script type="text/javascript" src="js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+		<script type="text/javascript" src="js/fancybox.js"></script>
+		<script type="text/javascript" src="js/plugins.js"></script>
+		<script type="text/javascript" src="js/scripts.js"></script>
+		<script type="text/javascript" src="js/mobilyselect.js"></script><!-- MobilySelect (Filterable Gallery) -->
+		<script type="text/javascript" src="js/filterable.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				if (jQuery.browser.msie && jQuery.browser.version < 9){
+					var $windowWidth = jQuery(window).width()+17;
+					var $windowHeight = jQuery(window).height()+17;
+				} else {
+					var $windowWidth = window.innerWidth;
+					var $windowHeight = window.innerHeight;
+				}
+				
+				var $image = jQuery('.bgImage img');
+				var img = new Image();
+				
+				img.src = jQuery($image).attr('src');
+				
+				var intervalId = setInterval(function(){
+					if (img.complete){
+						var $imgWidth = img.width;
+						var $imgHeight = img.height;
+						var $widthFactor = parseFloat($imgWidth/$windowWidth);
+						var $heightFactor = parseFloat($imgHeight/$windowHeight);
+						
+						if ($widthFactor < $heightFactor){
+							jQuery($image).css({width:$windowWidth+'px', height:parseInt($imgHeight/$widthFactor)+'px', top:'-'+parseInt((parseInt($imgHeight/$widthFactor)-$windowHeight)/2)+'px', left:0});
+						} else {
+							jQuery($image).css({width:parseInt($imgWidth/$heightFactor)+'px', height:$windowHeight+'px', top:0, left:'-'+parseInt((parseInt($imgWidth/$heightFactor)-$windowWidth)/2)+'px'});
+						}
+						
+						clearInterval(intervalId);
+						LoadImageStart();
+					}
+				}, 50);
+				
+				function LoadImageStart(){
+					$image.parent().fadeIn(500, function(){
+						jQuery(this).css({display:'block'});
+					});
+				}
+				
+				jQuery(window).resize(function(){
+					if (jQuery.browser.msie && jQuery.browser.version < 9){
+						var $windowWidth = jQuery(window).width()+17;
+						var $windowHeight = jQuery(window).height();
+					} else {
+						var $windowWidth = window.innerWidth;
+						var $windowHeight = window.innerHeight;
+					}
+					
+					var $imgWidth = img.width;
+					var $imgHeight = img.height;
+					var $widthFactor = parseFloat($imgWidth/$windowWidth);
+					var $heightFactor = parseFloat($imgHeight/$windowHeight);
+					
+					if ($widthFactor < $heightFactor){
+						jQuery($image).css({width:$windowWidth+'px', height:parseInt($imgHeight/$widthFactor)+'px', top:'-'+parseInt((parseInt($imgHeight/$widthFactor)-$windowHeight)/2)+'px', left:0});
+					} else {
+						jQuery($image).css({width:parseInt($imgWidth/$heightFactor)+'px', height:$windowHeight+'px', top:0, left:'-'+parseInt((parseInt($imgWidth/$heightFactor)-$windowWidth)/2)+'px'});
+					}
+				});
+			});
+		</script>
+		
+<!-- _________________________ Start Background Image __________________________ -->
+		<div class="bgImage">
+			<img src="images/subpage_bg.jpg" alt="" />
+		</div>
+<!-- _________________________ Finish Background Image __________________________ -->
+
+
+<!-- _________________________ Start Page ___________________________ -->
+		<div id="page">
+
+<!-- _________________________ Start Header _________________________ -->
+<div class="header_wrap">
+				<div id="header">
+					<div class="header_inner">
+						<a class="logo" title="L'Abel Armoires" href="index.html">
+							<img alt="L'Abel Armoires logo" src="images/logo.png" />
+						</a>
+<!-- _________________________ Start Navigation _____________________ -->
+						<div class="navigation_wrap">
+							<ul id="navigation">
+								<li><a href="index.html">Accueil<span>L'Abel Armoire</span></a></li>
+								<li><a href="#">À Propos<span>Qui sommes nous?</span></a>
+									<ul>
+										<li><a href="a_propos.html">Notre Entreprise</a></li>
+										<li><a href="services.html">Nos Services</a></li>
+										
+									</ul>
+								</li>
+								<li><a href="gallerie.html">Gallerie<span>Gallerie Photo</span></a></li>
+								<li><a href="temoignages.html">Témoignages<span>Nos Clients Témoignent</span></a></li>
+								<li><a href="contacts.html">Contacts<span>Contactez-nous</span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="header_arrow_wrap">
+						<a href="#" class="header_arrow"><span>&nbsp;</span></a>
+					</div>
+<!-- _________________________ Finish Navigation ____________________ -->
+
+				</div>
+			</div>
+<!-- _________________________ Finish Header ________________________ -->
+
+
+<!-- _________________________ Start Middle _________________________ -->
+			<div id="middle">
+				<div id="home">
+					<h2 class="home">Gallerie</h2>
+				</div>
+				<div class="plain-black clearfix">
+                <div class="selecter">
+
+                            <div class="selecterBtns">
+                            
+                                <ul class="filterable">
+									<li><a href="#" rel="all" class="active">Nos Projets</a></li>
+                                    <li><a href="#" rel="cuisine">Cuisines</a></li>
+                                    <li><a href="#" rel="bain">Salles de bain</a></li>
+                                    <li><a href="#" rel="autres">Autres</a></li>
+                                </ul>
+                                
+                            </div>
+                            
+                      <div class="portfolio fancybox-portfolio fourcol-portfolio fourcol-fancybox-portfolio selecterContent clearfix">
+				     <ul class="filterable">
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_01.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_01.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_02.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_02.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_03.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_03.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_04.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_04.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_05.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_05.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_06.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_06.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_07.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_07.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_08.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_08.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_09.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_09.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_10.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_10.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_11.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_11.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_12.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_12.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_13.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_13.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_15.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_15.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_16.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_16.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_17.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_17.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_19.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_19.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_20.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_20.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_21.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_21.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_23.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_23.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_27.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_27.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_28.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_28.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_29.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_29.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_30.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_30.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_31.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_31.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_32.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_32.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_33.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_33.jpg" alt="" />
+                            </a>
+                        </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_34.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_34.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item bain">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/sb_01.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/sb_01.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item bain">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/sb_02.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/sb_02.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item bain">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/sb_03.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/sb_03.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item bain">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/sb_04.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/sb_04.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item bain">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/sb_05.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/sb_05.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item bain">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/sb_06.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/sb_06.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item bain">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/sb_08.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/sb_08.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item bain">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/sb_09.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/sb_09.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item bain">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_14.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_14.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item bain">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/sb_12.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/sb_12.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item bain">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/sb_13.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/sb_13.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item bain">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/sb_15.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/sb_15.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item bain">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/sb_16.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/sb_16.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item bain">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/sb_17.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/sb_17.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item bain">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/sb_19.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/sb_19.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item bain">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/sb_20.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/sb_20.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item bain">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/sb_21.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/sb_21.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item bain">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/sb_22.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/sb_22.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item bain">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/sb_23.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/sb_23.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item bain">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/sb_24.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/sb_24.jpg" alt="" />
+                            </a>
+                        </li>
+						
+						<li class="one-portfolio-item autres">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/a_01.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/a_01.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item autres">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/a_02.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/a_02.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item autres">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/a_03.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/a_03.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item autres">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/a_04.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/a_04.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item autres">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/a_05.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/a_05.jpg" alt="" />
+                            </a>
+                        </li>
+						<li class="one-portfolio-item autres">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/a_07.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/a_07.jpg" alt="" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+			 </div>
+          </div>
+		 
+		  
+						<br />
+				<div class="cl"></div>
+				
+
+<!-- _________________________ Start Footer _________________________ -->
+				<div id="footer">
+					<p><span>L'Abel Armoires</span>&nbsp&copy; 2012</p>
+				</div>
+<!-- _________________________ Finish Footer ________________________ -->
+
+			</div>
+<!-- _________________________ Finish Middle ________________________ -->
+
+			<div class="cl"></div>
+		</div>
+<!-- _________________________ Finish Page __________________________ -->
+
+	</body>
+</html>
