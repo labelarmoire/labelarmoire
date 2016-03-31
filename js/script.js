@@ -280,29 +280,27 @@ jQuery(document).ready(function(){
 		var $name 	= jQuery('#name').val();
 		var $email 	= jQuery('#email').val();
 		var $subject = jQuery('#subject').val();
-		var $url = jQuery('#url').val();
 		var $message = jQuery('#message').val();
-		var $contactemail = jQuery('#contactemail').val();
-		var $contacturl = jQuery('#contacturl').val();
-		var $mywebsite = jQuery('#contactwebsite').val();
 		
 		if ($name != '' && $name.length < 3){ $nameshort = true; } else { $nameshort = false; }
 		if ($name != '' && $name.length > 30){ $namelong = true; } else { $namelong = false; }
 		if ($email != '' && checkemail($email)){ $emailerror = true; } else { $emailerror = false; }
 		if ($subject != '' && $subject.length < 3){ $subjectshort = true; } else { $subjectshort = false; }
 		if ($subject != '' && $subject.length > 100){ $subjectlong = true; } else { $subjectlong = false; }
-		if ($url == ''){ $url = 'none'; }
 		if ($message != '' && $message.length < 3){ $messageshort = true; } else { $messageshort = false; }
 		
 		jQuery('#contactform .loading').animate({opacity: 1}, 250);
 		
-		if ($name != '' && $nameshort != true && $namelong != true && $email != '' && $emailerror != false && $subject != '' && $subjectshort != true && $subjectlong != true && $message != '' && $messageshort != true && $contactemail != '' && $contacturl != '' && $mywebsite != ''){
-			jQuery.post($contacturl, 
-				{type:'form', contactemail:$contactemail, name:$name, email:$email, subject:$subject, website:$url, message:$message, mywebsite:$mywebsite}, 
-				function(data){
+		if ($name != '' && $nameshort != true && $namelong != true && $email != '' && $emailerror != false && $subject != '' && $subjectshort != true && $subjectlong != true && $message != '' && $messageshort != true){
+			$.ajax({
+				url: "https://formspree.io/labelarmoire@videotron.ca", 
+				method: "POST",
+				data: {nom: $name, email: $email, sujet: $subject, message: $message},
+				dataType: "json",
+				beforeSend: function(){
 					jQuery('#contactform .loading').animate({opacity: 0}, 250);
 					jQuery('.entry div.contform').fadeOut('slow');
-					jQuery('#name, #subject, #url, #email, #message').val('');
+					jQuery('#name, #subject, #email, #message').val('');
 					jQuery('#contactform div.form_info div.form_error').hide();
 					jQuery('.entry .box').hide();
 					jQuery('.entry .info_box').fadeIn('fast');
@@ -311,8 +309,7 @@ jQuery(document).ready(function(){
 						jQuery('.entry div.contform').fadeIn('slow');
 					});
 				}
-			);
-			
+			});
 			return false;
 		} else {
 			jQuery('#contactform .loading').animate({opacity: 0}, 250);
