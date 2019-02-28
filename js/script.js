@@ -293,7 +293,7 @@ jQuery(document).ready(function(){
 		
 		if ($name != '' && $nameshort != true && $namelong != true && $email != '' && $emailerror != false && $subject != '' && $subjectshort != true && $subjectlong != true && $message != '' && $messageshort != true){
 			$.ajax({
-				url: "https://formspree.io/v_labelarmoire@videotron.ca", 
+				url: "https://formspree.io/labelarmoire@videotron.ca", 
 				method: "POST",
 				data: {nom: $name, email: $email, sujet: $subject, message: $message},
 				dataType: "json",
