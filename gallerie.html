@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-	
+
 <head>
 		<meta charset="utf-8" />
 		<meta name="description" content="l'abel armoires" />
@@ -36,36 +36,36 @@
 					var $windowWidth = window.innerWidth;
 					var $windowHeight = window.innerHeight;
 				}
-				
+
 				var $image = jQuery('.bgImage img');
 				var img = new Image();
-				
+
 				img.src = jQuery($image).attr('src');
-				
+
 				var intervalId = setInterval(function(){
 					if (img.complete){
 						var $imgWidth = img.width;
 						var $imgHeight = img.height;
 						var $widthFactor = parseFloat($imgWidth/$windowWidth);
 						var $heightFactor = parseFloat($imgHeight/$windowHeight);
-						
+
 						if ($widthFactor < $heightFactor){
 							jQuery($image).css({width:$windowWidth+'px', height:parseInt($imgHeight/$widthFactor)+'px', top:'-'+parseInt((parseInt($imgHeight/$widthFactor)-$windowHeight)/2)+'px', left:0});
 						} else {
 							jQuery($image).css({width:parseInt($imgWidth/$heightFactor)+'px', height:$windowHeight+'px', top:0, left:'-'+parseInt((parseInt($imgWidth/$heightFactor)-$windowWidth)/2)+'px'});
 						}
-						
+
 						clearInterval(intervalId);
 						LoadImageStart();
 					}
 				}, 50);
-				
+
 				function LoadImageStart(){
 					$image.parent().fadeIn(500, function(){
 						jQuery(this).css({display:'block'});
 					});
 				}
-				
+
 				jQuery(window).resize(function(){
 					if (jQuery.browser.msie && jQuery.browser.version < 9){
 						var $windowWidth = jQuery(window).width()+17;
@@ -74,12 +74,12 @@
 						var $windowWidth = window.innerWidth;
 						var $windowHeight = window.innerHeight;
 					}
-					
+
 					var $imgWidth = img.width;
 					var $imgHeight = img.height;
 					var $widthFactor = parseFloat($imgWidth/$windowWidth);
 					var $heightFactor = parseFloat($imgHeight/$windowHeight);
-					
+
 					if ($widthFactor < $heightFactor){
 						jQuery($image).css({width:$windowWidth+'px', height:parseInt($imgHeight/$widthFactor)+'px', top:'-'+parseInt((parseInt($imgHeight/$widthFactor)-$windowHeight)/2)+'px', left:0});
 					} else {
@@ -88,7 +88,7 @@
 				});
 			});
 		</script>
-		
+
 <!-- _________________________ Start Background Image __________________________ -->
 		<div class="bgImage">
 			<img src="images/subpage_bg.jpg" alt="" />
@@ -114,7 +114,7 @@
 									<ul>
 										<li><a href="a_propos.html">Notre Entreprise</a></li>
 										<li><a href="services.html">Nos Services</a></li>
-										
+
 									</ul>
 								</li>
 								<li><a href="gallerie.html">Gallerie<span>Gallerie Photo</span></a></li>
@@ -142,16 +142,16 @@
                 <div class="selecter">
 
                             <div class="selecterBtns">
-                            
+
                                 <ul class="filterable">
 									<li><a href="#" rel="all" class="active">Nos Projets</a></li>
                                     <li><a href="#" rel="cuisine">Cuisines</a></li>
                                     <li><a href="#" rel="bain">Salles de bain</a></li>
                                     <li><a href="#" rel="autres">Autres</a></li>
                                 </ul>
-                                
+
                             </div>
-                            
+
                       <div class="portfolio fancybox-portfolio fourcol-portfolio fourcol-fancybox-portfolio selecterContent clearfix">
 				     <ul class="filterable">
                         <li class="one-portfolio-item cuisine">
@@ -294,6 +294,11 @@
                                 <img src="images/gallerie/thumb/c_34.jpg" alt="" />
                             </a>
                         </li>
+                        <li class="one-portfolio-item cuisine">
+                            <a class="portfolio-thumb-link" href="images/gallerie/popup/c_35.jpg" rel="portfolio">
+                                <img src="images/gallerie/thumb/c_35.jpg" alt="" />
+                            </a>
+                        </li>
 						<li class="one-portfolio-item bain">
                             <a class="portfolio-thumb-link" href="images/gallerie/popup/sb_01.jpg" rel="portfolio">
                                 <img src="images/gallerie/thumb/sb_01.jpg" alt="" />
@@ -394,7 +399,7 @@
                                 <img src="images/gallerie/thumb/sb_24.jpg" alt="" />
                             </a>
                         </li>
-						
+
 						<li class="one-portfolio-item autres">
                             <a class="portfolio-thumb-link" href="images/gallerie/popup/a_01.jpg" rel="portfolio">
                                 <img src="images/gallerie/thumb/a_01.jpg" alt="" />
@@ -429,11 +434,11 @@
                 </div>
 			 </div>
           </div>
-		 
-		  
+
+
 						<br />
 				<div class="cl"></div>
-				
+
 
 <!-- _________________________ Start Footer _________________________ -->
 				<div id="footer">
